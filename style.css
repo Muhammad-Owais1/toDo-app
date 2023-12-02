@@ -1,0 +1,318 @@
+:root {
+    --lightPurple: rgb(157, 147, 218);
+    --blue: rgb(106, 106, 250);
+    --grey: rgb(213, 213, 213);
+    --darkGrey: grey;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.bg-blur {
+    height: 100vh;
+    width: 100vw;
+    
+    background-color: #58585873;
+    position: absolute;
+
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    background-color: rgb(255, 255, 255);
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+button {
+    height: 35px;
+    width: 100px;
+
+    border-radius: 7px;
+    border: none;
+}
+
+.logo {
+    text-transform: uppercase;
+
+    color: var(--lightPurple);
+    font-size: 50px;
+
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.line {
+    background-color: var(--lightPurple);
+
+    height: 2px;
+    width: 75%;
+}
+
+.container {
+    width: 75%;
+
+}
+
+.upper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.add-btn {
+    background-color: var(--blue);
+    color: white;
+
+    margin-top: 20px;
+}
+
+.upper select {
+    height: 35px;
+    width: 110px;
+
+    padding-left: 10px;
+
+    border: none;
+    border-radius: 7px;
+
+    background-color: var(--grey);
+    color: black;
+
+    text-align: left;
+
+    margin-top: 20px;
+}
+
+.lower {
+    height: 65vh;
+
+    margin-top: 10px;
+    padding: 10px;
+    padding-bottom: 0;
+
+    border-radius: 7px;
+
+    background-color: var(--grey);
+
+    overflow-y: scroll;
+}
+
+.task {
+    height: 60px;
+    width: 100%;
+    
+    margin-bottom: 10px;
+
+    border-radius: 7px;
+
+    background-color: white;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+input[type="checkbox"] {
+    pointer-events: none;
+    height: 25px;
+    width: 25px;
+    
+    margin-left: 10px;
+}
+
+.task-left div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.task-title {
+    font-size: 14px;
+    font-weight:bolder;
+}
+
+.task-timing {
+    font-size: 12px;
+}
+
+.task-right {
+    margin-right: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.task-right button {
+    height: 30px;
+    width: 30px;
+
+    border-radius: 3px;
+}
+
+.box {
+    padding: 30px 20px;
+    background-color: rgb(241, 236, 255);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: left;
+    gap: 15px;
+
+    border-radius: 20px;
+}
+
+.box div {
+    width: 100%;
+}
+
+.box h2 {
+    width: 100%;
+
+    font-size: 18px;
+
+    
+    color: var(--darkGrey);
+}
+
+.box h3 {
+    font-size: 15px;
+
+    margin-bottom: 6px;
+
+    color: var(--darkGrey);
+}
+
+.box input {
+    width: 350px;
+    height: 40px;
+    border: none;
+
+    font-size: 16px;
+
+    padding-left: 10px;
+}
+
+.box select {
+    width: 350px;
+    height: 40px;
+
+    border-radius: 3px;
+    border: none;
+    padding-left: 10px;
+
+    font-size: 16px;
+
+    background-color: #fff;
+}
+
+
+.blue-btn {
+    background-color: var(--blue);
+    color: white;
+}
+
+.grey-btn {
+    background: var(--grey);
+    color: var(--darkGrey);
+}
+
+.messages {
+    position: absolute;
+    right: 0px;
+}
+
+.message {
+    height: 80px;
+    width: 250px;
+    background-color: white;
+
+    font-size: 12px;
+
+    box-shadow: 0 0 6px black;
+
+    margin-top: 10px;
+    margin-right: 10px;
+
+    position: relative;
+    right: -262px; 
+
+    animation: message 3s;
+    
+}
+
+.message-content {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.message i {
+    font-size: 30px;
+}
+
+.message-line {
+    height: 4px;
+
+
+    position: absolute;
+    bottom: 0;
+
+    animation: messageLine 3s;
+}
+
+@keyframes message {
+    0% {
+        right: -262px;
+    }
+    25% {
+        right: 0px;
+    }
+    90% {
+        right: 0px;
+    }
+    100% {
+        right: -250px;
+    }
+}
+
+@keyframes messageLine {
+    0% {
+        width: 0%;
+    }    
+    100% {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 457px) {
+    .logo {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .task {
+        height: 90px;
+    }
+    .box input,
+    .box select {
+        width: 230px;
+    }
+}
